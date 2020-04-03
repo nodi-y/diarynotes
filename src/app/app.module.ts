@@ -13,16 +13,20 @@ import { FooterComponent } from './components/footer/footer.component';
 import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { SettingsComponent } from './components/settings/settings.component';
+import { CalendarComponent } from './components/calendar/calendar.component';
+
 
 import { SwiperComponent } from 'angular2-useful-swiper';
 
-import { HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
-
-export class MyHammerConfig extends HammerGestureConfig  {
-  overrides = <any>{
-    'swipe': {velocity: 0.4, threshold: 20} // override default settings
-  }
-}
+import { SwiperModule } from 'ngx-swiper-wrapper';
+import { SWIPER_CONFIG } from 'ngx-swiper-wrapper';
+import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
+ 
+const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
+  direction: 'horizontal',
+  slidesPerView: 1,
+  initialSlide: 1
+};
 
 @NgModule({
   declarations: [
@@ -32,6 +36,7 @@ export class MyHammerConfig extends HammerGestureConfig  {
     UrgesComponent,
     ActionsComponent,
     SkillsComponent,
+    CalendarComponent,
     DashboardComponent,
     FooterComponent,
     AboutComponent,
@@ -42,11 +47,12 @@ export class MyHammerConfig extends HammerGestureConfig  {
   imports: [
     BrowserModule,
     AppRoutingModule,
+    SwiperModule
   ],
   providers: [
-    { 
-      provide: HAMMER_GESTURE_CONFIG, 
-      useClass: MyHammerConfig 
+    {
+      provide: SWIPER_CONFIG,
+      useValue: DEFAULT_SWIPER_CONFIG
     }
   ],
   bootstrap: [AppComponent]
