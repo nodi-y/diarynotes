@@ -1,3 +1,32 @@
-<p>
-  dashboard works!
-</p>
+<swiper>
+  <div class="swiper-wrapper">
+    <div class="container-fluid swiper-slide">
+      <div id="card-header" class="card mt-2">
+        <h2 class="pl-2">Emotions (0-5)</h2>
+        <app-emotions class="card card-body border-0"></app-emotions>
+        <button (click)="addEmotion()" class="btn btn-success btn-block"><i class="fa fa-plus"></i></button>
+      </div>
+  </div>
+  <div class="container-fluid swiper-slide">
+      <div id="card-header" class="card mt-2">
+        <h2 class="pl-2">Urges (0-5)</h2>
+        <app-urges class="card card-body border-0"></app-urges>
+        <button (click)="addUrge()" class="btn btn-success btn-block"><i class="fa fa-plus"></i></button>
+      </div>
+  </div>
+  <div class="container-fluid swiper-slide">
+    <div id="card-header" class="card mt-2">
+      <h2 class="pl-2">Actions (freq.)</h2>
+      <app-actions class="card card-body border-0"></app-actions>
+      <button (click)="addAction()" class="btn btn-success btn-block"><i class="fa fa-plus"></i></button>
+    </div>
+  </div>
+  <div class="container-fluid swiper-slide">
+    <div id="card-header" class="card mt-2">
+      <h2 class="pl-2">Skills (0-7)</h2>
+      <app-skills class="card card-body border-0"></app-skills>
+      <button (click)="addSkill()" class="btn btn-success btn-block"><i class="fa fa-plus"></i></button>
+    </div>
+  </div>
+  </div>
+</swiper>

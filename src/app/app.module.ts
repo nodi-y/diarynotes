@@ -12,6 +12,17 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { SettingsComponent } from './components/settings/settings.component';
+
+import { SwiperComponent } from 'angular2-useful-swiper';
+
+import { HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
+
+export class MyHammerConfig extends HammerGestureConfig  {
+  overrides = <any>{
+    'swipe': {velocity: 0.4, threshold: 20} // override default settings
+  }
+}
 
 @NgModule({
   declarations: [
@@ -24,13 +35,21 @@ import { ContactComponent } from './components/contact/contact.component';
     DashboardComponent,
     FooterComponent,
     AboutComponent,
-    ContactComponent
+    ContactComponent,
+    SettingsComponent,
+    SwiperComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
-  providers: [],
+  providers: [
+    { 
+      provide: HAMMER_GESTURE_CONFIG, 
+      useClass: MyHammerConfig 
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
