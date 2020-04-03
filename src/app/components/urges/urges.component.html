@@ -1,3 +1,14 @@
-<p>
-  urges works!
-</p>
+<div class="container-fluid">
+  <div id="card-header" class="card mt-2">
+  <table>
+    <thead>
+      <h2 class="pl-2 font-weight-light">Urges</h2>
+    </thead>
+    <tbody *ngFor="let urge of urges">
+      <td>{{urge}}</td>
+    </tbody>
+  
+    <button (click)="addUrge()" class="btn btn-success btn-block"><i class="fa fa-plus"></i></button>
+  </table>
+  </div>
+</div>
