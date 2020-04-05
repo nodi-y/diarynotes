@@ -19,6 +19,7 @@ import { SwiperComponent } from 'angular2-useful-swiper';
 import { SwiperModule } from 'ngx-swiper-wrapper';
 import { SWIPER_CONFIG } from 'ngx-swiper-wrapper';
 import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
+import { CalendarComponent } from './components/calendar/calendar.component';
  
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -39,7 +40,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     AboutComponent,
     ContactComponent,
     SettingsComponent,
-    SwiperComponent
+    SwiperComponent,
+    CalendarComponent
   ],
   imports: [
     BrowserModule,

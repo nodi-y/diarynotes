@@ -1,0 +1,17 @@
+<tbody>
+  <h4 class="ml-2">{{getMonth()}}</h4>
+  <table class="ml-3 mb-3">
+    <tr >
+      <th></th>
+      <th *ngFor="let dummy of ' '.repeat(numberOfDays()).split(''), let x = index">
+        {{x+1}}
+      </th>
+    </tr>
+    <tbody *ngFor='let rd of log.rowData'>
+      <td class="pr-3">{{rd.rowId}}</td>
+      <td *ngFor='let entry of rd.entries'>
+        {{entry}}
+      </td>
+    </tbody>
+  </table>
+</tbody>

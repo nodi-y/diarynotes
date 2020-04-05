@@ -11,6 +11,7 @@ import { RowData } from "../../models/RowData";
 export class EmotionsComponent implements OnInit {
   log: Log = {
     month: 0,
+    year: 0,
     rowData: [{
         rowId: "",
         entries: []
@@ -21,8 +22,6 @@ export class EmotionsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    let date: Date = new Date();
-    this.log.month = date.getMonth();
 
     let rd : RowData[] = [{
       rowId: "Joy",
@@ -49,34 +48,5 @@ export class EmotionsComponent implements OnInit {
     ]; */
 
   }
-
-getMonth(): string {
-  switch(this.log.month) {
-    case 0:
-      return "Jan";
-    case 1:
-      return "Feb";
-    case 2: 
-      return "Mar";
-    case 3: 
-      return "Apr";
-    case 4: 
-      return "May";
-    case 5: 
-      return "Jun";
-    case 6:
-      return "Jul";
-    case 7: 
-      return "Aug";
-    case 8: 
-      return "Sep";
-    case 9: 
-      return "Oct";
-    case 10: 
-      return "Nov";
-    case 11: 
-      return "Dec";
-  }
-}
 
 }
