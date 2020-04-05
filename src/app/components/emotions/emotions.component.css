@@ -6,6 +6,10 @@ tbody {
     background-color: white;
 }
 
-h2, h3 {
+* {
     font-weight: 300;
+}
+
+th, td {
+    border: 1px solid black;
 }
