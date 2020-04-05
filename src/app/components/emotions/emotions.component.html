@@ -4,9 +4,20 @@
     <thead>
       <h2 class="pl-2">Emotions</h2>
     </thead>
-    <tbody *ngFor="let emotion of emotions">
-      <td>{{emotion}}</td>
+
+    <!--calendar-->
+    <tbody>
+      <h3>{{getMonth()}}</h3>
+      <div class="row" *ngFor='let rd of log.rowData'>
+        <div class="col-sm-3">{{rd.rowId}}</div>
+        <div class="col-sm-9">{{rd.entries}}</div>
+      </div>
     </tbody>
+   
+
+    <!-- <tbody *ngFor="let emotion of emotions">
+      <td>{{emotion}}</td>
+    </tbody> -->
   
     <button (click)="addEmotion()" class="btn btn-success btn-block"><i class="fa fa-plus"></i></button>
   </table>
