@@ -24,7 +24,7 @@ import { CalendarComponent } from './components/calendar/calendar.component';
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
   slidesPerView: 1,
-  initialSlide: 1
+  initialSlide: 0
 };
 
 @NgModule({
