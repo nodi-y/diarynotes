@@ -13,8 +13,6 @@ import { FooterComponent } from './components/footer/footer.component';
 import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { SettingsComponent } from './components/settings/settings.component';
-import { CalendarComponent } from './components/calendar/calendar.component';
-
 
 import { SwiperComponent } from 'angular2-useful-swiper';
 
@@ -36,7 +34,6 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     UrgesComponent,
     ActionsComponent,
     SkillsComponent,
-    CalendarComponent,
     DashboardComponent,
     FooterComponent,
     AboutComponent,
