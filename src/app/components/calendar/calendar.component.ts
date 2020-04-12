@@ -7,8 +7,8 @@ import { Log } from "../../models/Log"
   styleUrls: ['./calendar.component.css'],
 })
 export class CalendarComponent implements OnInit {
-  month: number = 0;
-  year: number = 0;
+  //month: number = 0;
+  //year: number = 0;
 
   @Input()
   log: Log; //takes in a Log w/o any date info
@@ -17,8 +17,8 @@ export class CalendarComponent implements OnInit {
 
   ngOnInit() {
     let date = new Date();
-    this.month = date.getMonth();
-    this.year = date.getFullYear();
+    this.log.month = date.getMonth();
+    this.log.year = date.getFullYear();
   }
 
   getMonth(): string {
@@ -52,19 +52,19 @@ export class CalendarComponent implements OnInit {
 
   numberOfDays(): number {
     //February, accounting for leap years
-    if (this.month == 1) {
+    if (this.log.month == 1) {
       if (this.isLeapYear()) {
         return 29;
       } else {
         return 28;
       }
     } else {
-      if (this.month % 2 == 0) {
-       if (this.month <= 6) {
+      if (this.log.month % 2 == 0) {
+       if (this.log.month <= 6) {
         return 31;
        } else { return 30;}
       } else {
-        if (this.month <= 6) {
+        if (this.log.month <= 6) {
           return 30;
          } else { return 31;}
       }
@@ -72,9 +72,9 @@ export class CalendarComponent implements OnInit {
   }
 
   isLeapYear(): boolean {
-    if (this.year % 4 == 0) {
-      if (this.year % 100 == 0) {
-        if (this.year % 400) {
+    if (this.log.year % 4 == 0) {
+      if (this.log.year % 100 == 0) {
+        if (this.log.year % 400) {
           return  true;
         } else {
           return false;
