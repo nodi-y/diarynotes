@@ -1,3 +1,49 @@
-<p>
-  emotions works!
-</p>
+<div class="container-fluid">
+<div class="card mt-2">
+  <table>
+    <thead id="card-header">
+      <h2 class="pl-2">Emotions</h2>
+    </thead>
+
+    <!--calendar-->
+
+    <app-calendar [log]="log" (numDaysLoaded)="numDaysHandler($event)"></app-calendar>
+
+    <!-- <tbody>
+      <h4 class="ml-2">{{getMonth()}}</h4>
+      <table class="ml-3 mb-3">
+        <tr >
+          <th></th>
+          <th>1</th>
+          <th>2</th>
+          <th>3</th>
+          <th>4</th>
+          <th>5</th>
+          <th>6</th>
+        </tr>
+        <tbody *ngFor='let rd of log.rowData'>
+          <td class="pr-3">{{rd.rowId}}</td>
+          <td *ngFor='let entry of rd.entries'>
+            {{entry}}
+          </td>
+        </tbody>
+      </table>
+    </tbody> -->
+
+    <!-- <tbody>
+      <h3>{{getMonth()}}</h3>
+      <div class="row" *ngFor='let rd of log.rowData'>
+        <div class="col-sm-3">{{rd.rowId}}</div>
+        <div class="col-sm-9">{{rd.entries}}</div>
+      </div>
+    </tbody> -->
+   
+
+    <!-- <tbody *ngFor="let emotion of emotions">
+      <td>{{emotion}}</td>
+    </tbody> -->
+  
+    <button (click)="addEmotion()" class="btn btn-success btn-block"><i class="fa fa-plus"></i></button>
+  </table>
+</div>
+</div>

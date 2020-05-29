@@ -12,6 +12,20 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { SettingsComponent } from './components/settings/settings.component';
+
+import { SwiperComponent } from 'angular2-useful-swiper';
+
+import { SwiperModule } from 'ngx-swiper-wrapper';
+import { SWIPER_CONFIG } from 'ngx-swiper-wrapper';
+import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
+import { CalendarComponent } from './components/calendar/calendar.component';
+ 
+const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
+  direction: 'horizontal',
+  slidesPerView: 1,
+  initialSlide: 0
+};
 
 @NgModule({
   declarations: [
@@ -24,13 +38,23 @@ import { ContactComponent } from './components/contact/contact.component';
     DashboardComponent,
     FooterComponent,
     AboutComponent,
-    ContactComponent
+    ContactComponent,
+    SettingsComponent,
+    SwiperComponent,
+    CalendarComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SwiperModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: SWIPER_CONFIG,
+      useValue: DEFAULT_SWIPER_CONFIG
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
