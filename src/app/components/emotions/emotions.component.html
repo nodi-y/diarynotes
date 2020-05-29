@@ -7,7 +7,7 @@
 
     <!--calendar-->
 
-    <app-calendar [log]="log"></app-calendar>
+    <app-calendar [log]="log" (numDaysLoaded)="numDaysHandler($event)"></app-calendar>
 
     <!-- <tbody>
       <h4 class="ml-2">{{getMonth()}}</h4>

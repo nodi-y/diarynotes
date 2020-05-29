@@ -18,11 +18,28 @@ export class EmotionsComponent implements OnInit {
       }
     ]
   };
+  emotions = [
+    'Joy',
+    'Sadness',
+    'Fear',
+    'Guilt',
+    'Shame',
+    'Anger',
+    'Interest',
+    'Disgust',
+    'Love',
+    'Passion'
+  ];
+  numDays: number;
 
   constructor() { }
 
   ngOnInit() {
+    this.emotions.forEach(emotion => {
+      this.log.rowData.push({rowId: emotion, entries: []});
+    });
 
+    /*
     let rd : RowData[] = [{
       rowId: "Joy",
       entries: [1,2,3,4,null,5]
@@ -32,7 +49,9 @@ export class EmotionsComponent implements OnInit {
       entries: [5,4,3,2,null,1]
     }]
 
-    this.log.rowData = rd;    
+    this.log.rowData = rd; 
+    
+    */
    
     /* this.emotions = [
       'Joy',
@@ -47,6 +66,17 @@ export class EmotionsComponent implements OnInit {
       'Passion'
     ]; */
 
+  }
+
+  numDaysHandler(num: number) {
+    this.numDays = num;
+    this.log.rowData.forEach(row => {
+      let newEntries = [];
+      for (let i = 0; i < this.numDays; i++) {
+        newEntries.push(null);
+      }      
+      row.entries = newEntries;
+    });
   }
 
 }

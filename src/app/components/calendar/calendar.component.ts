@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Log } from "../../models/Log"
 
 @Component({
@@ -10,6 +10,8 @@ export class CalendarComponent implements OnInit {
   //month: number = 0;
   //year: number = 0;
 
+  @Output() numDaysLoaded: EventEmitter<number> = new EventEmitter();
+
   @Input()
   log: Log; //takes in a Log w/o any date info
 
@@ -19,6 +21,7 @@ export class CalendarComponent implements OnInit {
     let date = new Date();
     this.log.month = date.getMonth();
     this.log.year = date.getFullYear();
+    this.numDaysLoaded.emit(this.numberOfDays());
   }
 
   getMonth(): string {
